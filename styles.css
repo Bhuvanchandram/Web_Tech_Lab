@@ -1,0 +1,35 @@
+header,footer{
+    text-align:center;
+    background-color:#0072c6;
+    padding:10px;
+    color:white;
+    }
+    
+    h3{
+    font-family: "Times New Roman";
+    }
+    
+    table{
+    text-align:center;
+    border:2px solid black;
+    border-collapse:collapse;
+    width:90%;
+    }
+    
+    td,th{
+    border:2px solid black;
+    border-collapse:collapse;
+    vertical-align:middle;
+    }
+    td:hover{
+    background-color: #0072d5;
+    }
+    
+    th{
+    background-color:#0072c6;
+    color:white;
+    font-size:17px;
+    }
+    .sub{
+    width:80%;
+    }

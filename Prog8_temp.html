@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marks Calculator</title>
+</head>
+<body>
+<form action="javascript:calculateAverage()" method="post">
+<h1>Marks Calculator</h1>
+<p>
+<label for="regno">Register Number:</label>
+<input type="text" id="regno" name="regno" />
+</p>
+<p>
+<label for="subcode">Subject Code:</label>
+<input type="text" id="subcode" name="subcode" />
+</p>
+<p>
+<label for="m1">Test 1:</label>
+<input type="text" id="m1" name="m1" />
+</p>
+<p>
+<label for="m2">Test 2:</label>
+<input type="text" id="m2" name="m2" />
+</p>
+<p>
+<label for="m3">Test 3:</label>
+<input type="text" id="m3" name="m3" />
+</p>
+<p>
+<input type="submit" value="Calculate Average" />
+</p>
+</form>
+
+<script>
+function calculateAverage() {
+  // Get the values from the form
+  var regno = document.getElementById("regno").value;
+  var subcode = document.getElementById("subcode").value;
+  var m1 = document.getElementById("m1").value;
+  var m2 = document.getElementById("m2").value;
+  var m3 = document.getElementById("m3").value;
+
+  // Validate the values
+  if (regno == "") {
+    alert("Please enter a register number");
+    return;
+  }
+  if (subcode == "") {
+    alert("Please enter a subject code");
+    return;
+  }
+  if (isNaN(m1) || m1 < 0 || m1 > 100) {
+    alert("Please enter a valid mark for Test 1");
+    return;
+  }
+  if (isNaN(m2) || m2 < 0 || m2 > 100) {
+    alert("Please enter a valid mark for Test 2");
+    return;
+  }
+  if (isNaN(m3) || m3 < 0 || m3 > 100) {
+    alert("Please enter a valid mark for Test 3");
+    return;
+  }
+
+  // Calculate the average
+  var average = (m1 + m2 + m3) / 3;
+
+  // Display the average
+  alert("The average mark is " + average);
+}
+</script>
+</body>
+</html>
