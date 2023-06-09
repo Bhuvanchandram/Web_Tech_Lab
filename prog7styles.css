@@ -1,0 +1,101 @@
+html {
+    font-family: sans-serif;
+    background-color: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 #000000;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+/* Responsive design */
+
+@media screen and (max-width: 500px) {
+    form {
+      width: 100%;
+    }
+  }
+  
+  /* Animations */
+  
+  input[type="submit"] {
+    animation: submit 0.5s ease-in-out;
+  }
+  
+  @keyframes submit {
+    0% {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    100% {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  }
+  
+  /* Transitions */
+  
+  input {
+    transition: border-color 0.5s ease-in-out;
+  }
+  
+  input:hover {
+    border-color: #000000;
+  }
+  
+  /* Text effects */
+  
+  input {
+    text-shadow: 0 1px 0 #000000;
+    letter-spacing: 1px;
+  }
+    
+  

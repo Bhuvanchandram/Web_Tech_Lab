@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="9_styles.css">
+<script>
+$(function() {
+  // Validate user ID
+  $("#userId").on("keyup", function() {
+    var userId = $(this).val();
+    if (userId.length < 5 || userId.length > 12) {
+      $("#userIdError").html("User ID must be between 5 and 12 characters long.");
+      $("#userIdError").show();
+    } else {
+      $("#userIdError").hide();
+    }
+  });
+
+  // Validate name
+  $("#name").on("keyup", function() {
+    var name = $(this).val();
+    if (name.match(/[^a-zA-Z]/)) {
+      $("#nameError").html("Name must only contain alphabets.");
+      $("#nameError").show();
+    } else if (name.length < 15) {
+      $("#nameError").html("Name must be at least 15 characters long.");
+      $("#nameError").show();
+    } else {
+      $("#nameError").hide();
+    }
+  });
+
+  // Validate password
+  $("#password").on("keyup", function() {
+    var password = $(this).val();
+    if (password.length < 8) {
+      $("#passwordError").html("Password must be at least 8 characters long.");
+      $("#passwordError").show();
+    } else if (!password.match(/[A-Z]/)) {
+      $("#passwordError").html("Password must contain at least one uppercase letter.");
+      $("#passwordError").show();
+    } else if (!password.match(/[!@#$%^&*()_+]/)) {
+      $("#passwordError").html("Password must contain at least one special character.");
+      $("#passwordError").show();
+    } else {
+      $("#passwordError").hide();
+    }
+  });
+
+  // Validate email
+  $("#email").on("keyup", function() {
+    var email = $(this).val();
+    if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+      $("#emailError").html("Invalid email address.");
+      $("#emailError").show();
+    } else {
+      $("#emailError").hide();
+    }
+  });
+});
+</script>
+</head>
+<body>
+<h1>Registration Page</h1>
+<form action="success.php" method="post">
+  <input type="text" name="userId" id="userId" placeholder="User ID">
+  <span id="userIdError" class="error"></span>
+  <br>
+  <input type="text" name="name" id="name" placeholder="Name">
+  <span id="nameError" class="error"></span>
+  <br>
+  <input type="password" name="password" id="password" placeholder="Password">
+  <span id="passwordError" class="error"></span>
+  <br>
+  <input type="email" name="email" id="email" placeholder="Email">
+  <span id="emailError" class="error"></span>
+  <br>
+  <input type="submit" value="Register">
+</form>
+</body>
+</html>
